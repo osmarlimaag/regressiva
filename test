@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contagem Regressiva</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            text-align: center;
+            
+            color: white;
+        }
+
+        .countdown-container {
+            text-align: center;
+            padding: 20px;
+            background-color: rgba(0, 0, 0, 0.7);
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+        }
+
+        #countdown {
+            font-size: 2.5em;
+            margin-top: 20px;
+        }
+
+        #countdown span {
+            font-weight: bold;
+            color: #00d1b2;
+        }
+    </style>
+</head>
+<body>
+    <div class="countdown-container">
+        <h1>ATENÇÃO: Contagem Regressiva</h1>
+        <div id="countdown">
+            <span id="days"></span> Dias 
+            <span id="hours"></span> Horas 
+            <span id="minutes"></span> Minutos 
+            <span id="seconds"></span> Segundos
+        </div>
+    </div>
+
+    <script>
+        // Define a data alvo
+        const targetDate = new Date("2024-10-03T00:00:00").getTime();
+
+        // Função para atualizar a contagem regressiva
+        function updateCountdown() {
+            const now = new Date().getTime();
+            const timeLeft = targetDate - now;
+
+            // Cálculos para dias, horas, minutos e segundos
+            const days = Math.floor(timeLeft / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((timeLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((timeLeft % (1000 * 60)) / 1000);
+
+            // Exibir os valores no HTML
+            document.getElementById("days").textContent = days;
+            document.getElementById("hours").textContent = hours;
+            document.getElementById("minutes").textContent = minutes;
+            document.getElementById("seconds").textContent = seconds;
+
+            // Atualizar a cada segundo
+            setTimeout(updateCountdown, 1000);
+        }
+
+        // Inicializa a contagem
+        updateCountdown();
+    </script>
+</body>
+</html>
