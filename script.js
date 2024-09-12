@@ -1,5 +1,5 @@
 // Define a data alvo
-const targetDate = new Date("2024-10-03T00:00:00").getTime();
+const targetDate = new Date("2024-10-03T04:20:00").getTime();
 
 // Função para atualizar a contagem regressiva
 function updateCountdown() {
