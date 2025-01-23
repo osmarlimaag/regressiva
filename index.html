@@ -29,15 +29,27 @@
             margin-bottom: 20px;
         }
 
-        .carousel-images img {
-            width: 100%; /* Garante que as imagens ocupem todo o espaço do contêiner */
-            flex-shrink: 0;
+        .carousel {
+            margin-top: 50px;
+            width: 90%;
+            max-width: 800px; /* Tamanho máximo aumentado para imagens maiores */
+            overflow: hidden;
+            position: relative;
             border-radius: 10px;
-            height: auto; /* Preserva a proporção das imagens */
+            margin-bottom: 20px;
+            height: 500px; /* Define uma altura fixa para o carrossel */
+        }
+
+        .carousel-images {
+            display: flex;
+            transition: transform 0.5s ease;
+            height: 100%; /* Garante que as imagens ocupem toda a altura do carrossel */
         }
 
         .carousel-images img {
-            width: 100%;
+            width: 100%; /* As imagens ocupam 100% da largura */
+            height: 100%; /* As imagens ocupam 100% da altura do carrossel */
+            object-fit: cover; /* Ajusta as imagens para preencher o espaço sem distorções */
             flex-shrink: 0;
             border-radius: 10px;
         }
@@ -95,6 +107,7 @@
             <img src="AeO @alcynarfotografia-161.jpg" alt="Imagem 1">
             <img src="AeO @alcynarfotografia-256.jpg" alt="Imagem 2">
             <img src="DSC_1158.jpg" alt="Imagem 3">
+            <img src="DSC_1417.jpg" alt="Imagem 4">
         </div>
     </div>
 
@@ -107,7 +120,8 @@
     <div class="descricao">
      <p>Meu amor, saiba que pra sempre te amaria e que estarei sempre ao seu lado lhe apoiando e vivendo o melhor da vida independente do tempo. ❤️</p>
     </div>
-
+    <br>
+    <br>
     <script>
         // Carrossel
         const carouselImages = document.querySelector('.carousel-images');
