@@ -22,17 +22,18 @@
         .carousel {
             margin-top: 50px;
             width: 90%;
-            max-width: 400px;
+            max-width: 800px; /* Aumente o tamanho máximo para deixar as imagens maiores */
             overflow: hidden;
             position: relative;
             border-radius: 10px;
             margin-bottom: 20px;
         }
 
-        .carousel-images {
-            display: flex;
-            transition: transform 0.5s ease;
-            width: 100%;
+        .carousel-images img {
+            width: 100%; /* Garante que as imagens ocupem todo o espaço do contêiner */
+            flex-shrink: 0;
+            border-radius: 10px;
+            height: auto; /* Preserva a proporção das imagens */
         }
 
         .carousel-images img {
